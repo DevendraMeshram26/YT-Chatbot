@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube Video Chatbot</h1>
+            <p>Get instant insights and engage with any YouTube video.</p>
+        </header>
+
+        <div class="card">
+            <div class="url-input-group">
+                <input type="text" id="videoUrl" placeholder="Paste YouTube URL here">
+                <button id="processBtn" class="primary-btn">Analyze Video</button>
+            </div>
+
+            <div id="loading" class="loading-container" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analyzing video content...</p>
+            </div>
+
+            <div id="results" class="results-container" style="display: none;">
+                <div class="chat-container">
+                    <div id="chatHistory" class="chat-history">
+                        <!-- Chat messages will be added here -->
+                    </div>
+                    
+                    <div class="chat-input">
+                        <input type="text" id="questionInput" placeholder="Ask anything about the video content...">
+                        <button id="askBtn" class="primary-btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
